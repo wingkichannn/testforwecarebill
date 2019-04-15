@@ -32,6 +32,11 @@ module.exports.bootstrap = async function (done) {
 
   });
   sails.firebaseAdmin = admin;
+  // describe('User (model)', function() {
+
+
+  
+  // });
   return done();
 
 };

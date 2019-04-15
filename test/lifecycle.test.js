@@ -4,7 +4,7 @@ var sails = require('sails');
 before(function(done) {
 
   // Increase the Mocha timeout so that Sails has enough time to lift, even if you have a bunch of assets.
-  this.timeout(5000);
+  this.timeout(50000);
 
   sails.lift({
     // Your sails app's configuration files will be loaded automatically,
@@ -15,7 +15,7 @@ before(function(done) {
     hooks: { grunt: false },
     log: { level: 'warn' },
 
-    migrate: { models: 'drop' },
+    models: { migrate: 'drop' },
 
   }, function(err) {
     if (err) { return done(err); }
@@ -23,6 +23,7 @@ before(function(done) {
     // here you can load fixtures, etc.
     // (for example, you might want to create some records in the database)
 
+    
     return done();
   });
 });
@@ -36,3 +37,5 @@ after(function(done) {
   sails.lower(done);
 
 });
+
+
