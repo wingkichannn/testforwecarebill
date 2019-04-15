@@ -21,10 +21,10 @@ describe('UserController', function() {
   });
 
   describe('#logout()', function() {
-    it('should return status 200 with "Log out successfully" in body', function (done) {
+    it('should return status 200 with "Log out successfully!" in body', function (done) {
       supertest(sails.hooks.http.app)
       .get('/user/logout')
-      .expect(200, '"Log out successfully"', done);
+      .expect(200, '"Log out successfully!"', done);
     });
   });
 
